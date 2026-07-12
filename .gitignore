@@ -1,0 +1,15 @@
+# Local build outputs
+build/
+*.blend1
+*.blend2
+.DS_Store
+
+# Large 3D exports should be reviewed before commit
+*.fbx
+*.bvh
+*.obj
+*.glb
+*.gltf
+!examples/*.json
+!schemas/*.json
+!data/*.json
