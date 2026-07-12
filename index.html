@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenBody Forge AI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar" aria-label="Primary navigation">
+      <a href="#pipeline">Pipeline</a>
+      <a href="#project">Project</a>
+      <a href="#licence">Licence AI</a>
+      <a href="#rigging">Rigging</a>
+      <a href="#motion">Motion</a>
+      <a href="#safety">Safety</a>
+      <a href="#export">Export</a>
+      <a href="docs/OPENBODY_FORGE_AI_PROPOSAL.md">Proposal</a>
+    </nav>
+    <section class="hero-grid">
+      <div>
+        <p class="eyebrow">Local-first 3D avatar pipeline</p>
+        <h1>OpenBody Forge AI</h1>
+        <p class="lede">Build licence-cleared human avatar projects from open model sources through Blender rigging, motion retargeting, GLB export and browser integration.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#project">Start project</a>
+          <a class="button secondary" href="#export">Export manifest</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <h2>v0.1 build</h2>
+        <ul>
+          <li>Runs offline in the browser.</li>
+          <li>No account, backend or API key.</li>
+          <li>Does not bundle restricted 3D assets.</li>
+          <li>Generates Blender commands and export manifests.</li>
+        </ul>
+      </aside>
+    </section>
+  </header>
+
+  <main>
+    <section id="pipeline" class="panel">
+      <p class="section-kicker">Pipeline</p>
+      <h2>From open model source to browser avatar</h2>
+      <div class="pipeline">
+        <article><strong>1. Source</strong><span>MakeHuman, VALID, Anny route, local GLB/FBX/OBJ, or manual model.</span></article>
+        <article><strong>2. Licence AI</strong><span>Score redistribution, attribution and dependency risk.</span></article>
+        <article><strong>3. Blender</strong><span>Import, clean, rig, retarget and export.</span></article>
+        <article><strong>4. Validate</strong><span>Rig readiness, motion quality and safety review.</span></article>
+        <article><strong>5. Integrate</strong><span>Export GLB package and browser runtime manifest.</span></article>
+      </div>
+    </section>
+
+    <section id="project" class="panel project-grid">
+      <div>
+        <p class="section-kicker">Project intake</p>
+        <h2>Create an avatar build project</h2>
+        <p>Enter the source and intended use. The app will create a local project record, score readiness, and generate export files.</p>
+      </div>
+      <form id="projectForm" class="form-grid">
+        <label>Project name <input id="projectName" type="text" value="Adult Neutral Exercise Avatar v001" /></label>
+        <label>Model source route
+          <select id="sourceRoute">
+            <option value="makehuman" selected>MakeHuman official export</option>
+            <option value="valid">VALID Avatar Library candidate</option>
+            <option value="anny">Anny Body Model research route</option>
+            <option value="mblab">MB-Lab experiment</option>
+            <option value="mixamo">Mixamo workflow asset</option>
+            <option value="manual">Manual local model</option>
+          </select>
+        </label>
+        <label>Source URL or local note <input id="sourceUrl" type="text" placeholder="https://..." /></label>
+        <label>Declared licence
+          <select id="declaredLicence">
+            <option value="CC0" selected>CC0 / public-domain-style export</option>
+            <option value="Apache-2.0">Apache 2.0</option>
+            <option value="MIT">MIT</option>
+            <option value="GPL">GPL / AGPL family</option>
+            <option value="Research-only">Research-only or dataset terms</option>
+            <option value="Unknown">Unknown / unverified</option>
+            <option value="Commercial-restricted">Commercial-restricted</option>
+          </select>
+        </label>
+        <label>Redistribution status
+          <select id="redistribution">
+            <option value="approved">Allowed / approved</option>
+            <option value="local-only">Local-only</option>
+            <option value="unknown" selected>Unknown</option>
+            <option value="restricted">Restricted / do not redistribute</option>
+          </select>
+        </label>
+        <label>Attribution required?
+          <select id="attribution"><option value="no" selected>No</option><option value="yes">Yes</option><option value="unknown">Unknown</option></select>
+        </label>
+        <label>Target export
+          <select id="targetExport"><option value="adult_neutral.glb" selected>adult_neutral.glb</option><option value="adult_male.glb">adult_male.glb</option><option value="adult_female.glb">adult_female.glb</option><option value="exercise_pack.glb">exercise_pack.glb</option></select>
+        </label>
+        <label>Blender executable path <input id="blenderPath" type="text" value="/Applications/Blender.app/Contents/MacOS/Blender" /></label>
+        <div class="button-row">
+          <button class="button primary" type="submit">Analyse project</button>
+          <button id="loadSampleBtn" class="button secondary" type="button">Load sample</button>
+          <button id="resetBtn" class="button danger" type="button">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="licence" class="panel output-grid"><div><p class="section-kicker">Licence AI</p><h2>Redistribution and compliance gate</h2><p>The licence assistant produces a conservative recommendation before any model, rig, texture or motion clip is treated as app-ready.</p></div><div id="licenceOutput" class="output-card" aria-live="polite"></div></section>
+    <section id="rigging" class="panel output-grid"><div><p class="section-kicker">Rigging assistant</p><h2>Humanoid skeleton readiness</h2><p>Check the minimum technical conditions needed before retargeting exercise motion to an avatar.</p></div><div class="checklist" id="rigChecklist"></div></section>
+    <section id="motion" class="panel output-grid"><div><p class="section-kicker">Motion retargeting</p><h2>Exercise clip planning</h2><p>Select exercise animation clips to prepare, name and export through Blender.</p></div><div><div id="clipGrid" class="clip-grid"></div><div id="motionOutput" class="output-card"></div></div></section>
+    <section id="safety" class="panel output-grid"><div><p class="section-kicker">Safety review</p><h2>Avatar animation quality gate</h2><p>This validates the demonstration asset, not the user. It avoids clinical claims and prevents unsafe-looking movement from being marked ready.</p></div><div class="checklist" id="safetyChecklist"></div></section>
+
+    <section class="panel output-grid">
+      <div><p class="section-kicker">Browser preview</p><h2>GLB runtime plan</h2><p>The preview simulates the browser integration layer and generates the Three.js runtime map. When real GLB assets are added, this viewer can be replaced by GLTFLoader and AnimationMixer.</p></div>
+      <div class="preview-card"><div class="avatar-preview" aria-label="Abstract GLB avatar preview"><span class="head"></span><span class="body"></span><span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span></div><pre id="runtimeMap" class="code"></pre></div>
+    </section>
+
+    <section id="export" class="panel">
+      <div class="section-row"><div><p class="section-kicker">Export</p><h2>Generate app-ready manifests and Blender commands</h2></div><div class="button-row"><button id="downloadJsonBtn" class="button primary" type="button">Download manifest JSON</button><button id="downloadMarkdownBtn" class="button secondary" type="button">Download review Markdown</button><button id="copyCommandsBtn" class="button secondary" type="button">Copy Blender commands</button></div></div>
+      <div class="export-grid"><div><h3>Asset manifest</h3><pre id="manifestOutput" class="code"></pre></div><div><h3>Blender commands</h3><pre id="commandsOutput" class="code"></pre></div></div>
+    </section>
+
+    <section class="panel safety-note"><h2>Safety and rights boundary</h2><p>OpenBody Forge AI does not diagnose, prescribe, assess a user's movement, or bundle third-party human models or mocap clips without verified redistribution rights. The app helps prepare educational avatar assets and manifests for review.</p></section>
+  </main>
+
+  <footer><p>© ZenSightful Bytes &amp; Zen KOH. All rights reserved.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
