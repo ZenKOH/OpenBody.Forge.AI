@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OpenBody Forge AI Project",
+  "type": "object",
+  "required": ["project_name", "model_source", "licence", "selected_clips"],
+  "properties": {
+    "project_name": {"type": "string"},
+    "model_source": {"type": "string"},
+    "licence": {"type": "string"},
+    "selected_clips": {"type": "array", "items": {"type": "string"}}
+  }
+}
