@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OpenBody Forge AI Asset Manifest",
+  "type": "object",
+  "required": ["schema_version", "project_name", "source", "target_export", "rigging", "motion", "safety_review"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "project_name": {"type": "string"},
+    "source": {"type": "object"},
+    "target_export": {"type": "object"},
+    "rigging": {"type": "object"},
+    "motion": {"type": "object"},
+    "safety_review": {"type": "object"}
+  }
+}
