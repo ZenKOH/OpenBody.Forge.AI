@@ -1,0 +1,30 @@
+{
+  "name": "OpenBody Forge AI",
+  "version": "0.1.0-local-pipeline-mvp",
+  "updated": "2026-07-12",
+  "status": "completed build pushed",
+  "entrypoints": {
+    "main_app": "index.html",
+    "github_pages": "https://zenkoh.github.io/OpenBody.Forge.AI/"
+  },
+  "included_features": [
+    "local browser app",
+    "project intake for open body model sources",
+    "rule-based Licence AI",
+    "rigging readiness checklist",
+    "motion retargeting planner",
+    "exercise safety validator",
+    "Blender command generator",
+    "exportable JSON asset manifest",
+    "exportable Markdown review report",
+    "browser runtime map for Three.js GLB integration",
+    "Blender Python script templates",
+    "schemas, sample project and documentation"
+  ],
+  "limitations": [
+    "does not bundle third-party human model assets",
+    "does not bundle Mixamo, AMASS or BABEL motion files",
+    "Blender automation scripts require local Blender installation",
+    "v0.1 validates avatar assets and metadata, not a user's body"
+  ]
+}
