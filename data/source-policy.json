@@ -1,0 +1,43 @@
+{
+  "recommended_first_route": "MakeHuman official export -> Blender -> GLB -> Three.js",
+  "sources": [
+    {
+      "id": "makehuman",
+      "role": "primary model source",
+      "default_status": "candidate",
+      "licence_note": "Verify official export exception and all clothing, hair and texture dependencies."
+    },
+    {
+      "id": "anny",
+      "role": "future open parametric route",
+      "default_status": "research",
+      "licence_note": "Apache 2.0 reported by authors; validate code/assets and export workflow."
+    },
+    {
+      "id": "valid",
+      "role": "diversity and inclusion avatar library",
+      "default_status": "research",
+      "licence_note": "Verify package licence before redistribution."
+    },
+    {
+      "id": "mblab",
+      "role": "Blender humanoid generation experiment",
+      "default_status": "caution",
+      "licence_note": "GPL/AGPL family obligations require review."
+    },
+    {
+      "id": "mixamo",
+      "role": "workflow/rigging reference",
+      "default_status": "do-not-bundle",
+      "licence_note": "Not open-source; do not bundle downloaded assets without Adobe terms review."
+    }
+  ],
+  "required_manifest_fields": [
+    "source_url",
+    "licence_text",
+    "attribution",
+    "redistribution_statement",
+    "modification_history",
+    "safety_review_status"
+  ]
+}
