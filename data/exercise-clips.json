@@ -1,0 +1,15 @@
+[
+  {"name":"squat","stages":["setup","move","control","return"],"status":"planned"},
+  {"name":"lunge","stages":["setup","move","control","return"],"status":"planned"},
+  {"name":"bridge","stages":["setup","move","control","return"],"status":"planned"},
+  {"name":"push","stages":["setup","move","control","return"],"status":"planned"},
+  {"name":"plank","stages":["setup","move","control","return"],"status":"planned"},
+  {"name":"deadbug","stages":["setup","move","control","return"],"status":"planned"},
+  {"name":"balance","stages":["setup","move","control","return"],"status":"planned"},
+  {"name":"cardio","stages":["setup","move","control","return"],"status":"planned"},
+  {"name":"stretch","stages":["setup","move","control","return"],"status":"planned"},
+  {"name":"inchworm","stages":["setup","move","control","return"],"status":"planned"},
+  {"name":"burpee","stages":["setup","move","control","return"],"status":"planned"},
+  {"name":"calf","stages":["setup","move","control","return"],"status":"planned"},
+  {"name":"row","stages":["setup","move","control","return"],"status":"planned"}
+]
