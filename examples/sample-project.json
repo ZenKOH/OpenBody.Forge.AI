@@ -1,0 +1,7 @@
+{
+  "project_name": "MakeHuman Adult Neutral Exercise Avatar v001",
+  "model_source": "MakeHuman official export",
+  "licence": "CC0 export exception - verify dependencies",
+  "selected_clips": ["squat", "lunge", "bridge", "push", "plank"],
+  "target_export": "adult_neutral.glb"
+}
